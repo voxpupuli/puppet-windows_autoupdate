@@ -40,13 +40,13 @@ describe 'windows_autoupdate', :type => :class do
         'ensure'  => 'present',
         'path'    => "#{$p_reg_key}\\#{value.titlecase}",
         'type'    => 'dword',
-        'data'    => $defaults[value],
+        'data'    => $defaults[value]
       )}
     end
   
     it { should contain_service('wuauserv').with(
       'ensure' => 'running',
-      'enable' => 'true',
+      'enable' => 'true'
     )}
   end
   
