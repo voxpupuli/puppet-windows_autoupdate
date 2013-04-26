@@ -1,0 +1,7 @@
+name          'liamjbennett-windows_autoupdate'
+version       '0.0.1'
+author        'liamjbennett'
+license       'Apache License, Version 2.0'
+summary       'Puppet module to manage Windows AutoUpdate'
+project_page  'https://github.com/liamjbennett/puppet-windows_autoupdate'
+dependency    'puppetlabs/stdlib'
