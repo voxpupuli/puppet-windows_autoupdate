@@ -3,9 +3,9 @@ Puppet module for managing [Microsoft Windows Automatic Updates](http://support.
 This module is also available on the [Puppet Forge](https://forge.puppetlabs.com/liamjbennett/windows_autoupdate)
 
 [![Build
-Status](https://secure.travis-ci.org/liamjbennett/puppet-windows_autoupdate_.png)](http://travis-ci.org/liamjbennett/puppet-windows_autoupdate_)
+Status](https://secure.travis-ci.org/liamjbennett/puppet-windows_autoupdate.png)](http://travis-ci.org/liamjbennett/puppet-windows_autoupdate)
 [![Dependency
-Status](https://gemnasium.com/liamjbennett/puppet-windows_autoupdate_.png)](http://gemnasium.com/liamjbennett/puppet-windows_autoupdate_)
+Status](https://gemnasium.com/liamjbennett/puppet-windows_autoupdate.png)](http://gemnasium.com/liamjbennett/puppet-windows_autoupdate)
 
 
 ## Configuration ##
