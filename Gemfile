@@ -11,6 +11,7 @@ gem "puppet", puppetversion
 gem "puppet-lint"
 gem "hiera-puppet-helper"
 gem "puppetlabs_spec_helper"
+gem "facets"
 
 if puppetversion =~ /2\.7/
   gem "hiera"
