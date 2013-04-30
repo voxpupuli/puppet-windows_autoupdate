@@ -12,3 +12,15 @@ Status](https://gemnasium.com/liamjbennett/puppet-windows_autoupdate.png)](http:
 The windows_autoupdate class has some defaults that can be overridden, for instance if you wanted to disable autoupdates you could do the following:
 
 	class { 'windows_autoupdate': noAutoUpdate => '1' }
+
+## Requirements ##
+
+Tested against puppet versions 2.7.x and 3.x.x
+
+These modules will also get installed as a dependency for this module:
+
+puppetlabs/stdlib
+joshcooper/powershell
+liamjbennett/win_facts
+
+Please see the ModuleFile for further details.
