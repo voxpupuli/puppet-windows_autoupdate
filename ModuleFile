@@ -7,4 +7,4 @@ description   'Manage the local setting for performing automatic updates on your
 project_page  'https://github.com/liamjbennett/puppet-windows_autoupdate'
 license       'MIT'
 dependency    'puppetlabs/stdlib', '>=3.0.0'
-dependency    'puppetlabs/registry', '>=0.1.2'
+dependency    'puppetlabs/registry', '>= 1.0.0'
