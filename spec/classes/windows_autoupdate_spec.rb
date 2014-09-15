@@ -4,7 +4,7 @@ require 'facets/string/titlecase'
 $p_reg_key = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU'
 
 $defaults = { 'noAutoUpdate' => '0', 'aUOptions' => '4', 'scheduledInstallDay' => '1',
-              'scheduledInstallTime' => '1', 'useWUServer' => '0', 'rescheduleWaitTime' => '0',
+              'scheduledInstallTime' => '1', 'useWUServer' => '0', 'rescheduleWaitTime' => '10',
               'noAutoRebootWithLoggedOnUsers' => '0' }
 
 describe 'windows_autoupdate', :type => :class do
@@ -22,7 +22,7 @@ describe 'windows_autoupdate', :type => :class do
   context 'basic requirements' do
     let :params do
       { :noAutoUpdate => '0', :aUOptions => '4', :scheduledInstallDay => '1',
-        :scheduledInstallTime => '1', :useWUServer => '0', :rescheduleWaitTime => '0',
+        :scheduledInstallTime => '1', :useWUServer => '0', :rescheduleWaitTime => '10',
         :noAutoRebootWithLoggedOnUsers => '0' }
     end
     it { should contain_registry_key($p_reg_key ) }
