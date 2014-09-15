@@ -27,14 +27,14 @@ class windows_autoupdate(
   }
 
   registry_key { $windows_autoupdate::params::p_reg_key:
-    ensure => present,
+    ensure => present
   }
 
   registry_value { 'NoAutoUpdate':
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\NoAutoUpdate",
     type   => 'dword',
-    data   => $noAutoUpdate,
+    data   => $noAutoUpdate
   }
 
   registry_value { 'AUOptions':
@@ -48,14 +48,14 @@ class windows_autoupdate(
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\ScheduledInstallDay",
     type   => 'dword',
-    data   => $scheduledInstallDay,
+    data   => $scheduledInstallDay
   }
 
   registry_value { 'ScheduledInstallTime':
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\ScheduledInstallTime",
     type   => 'dword',
-    data   => $scheduledInstallTime,
+    data   => $scheduledInstallTime
   }
 
   registry_value { 'UseWUServer':
