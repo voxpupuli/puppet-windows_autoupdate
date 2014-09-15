@@ -33,49 +33,49 @@ class windows_autoupdate(
 
   registry_value { 'NoAutoUpdate':
     ensure => present,
-    path   => "${windows_autoupdate::params::p_reg_key}\NoAutoUpdate",
+    path   => "${windows_autoupdate::params::p_reg_key}\\NoAutoUpdate",
     type   => 'dword',
     data   => $noAutoUpdate,
   }
 
   registry_value { 'AUOptions':
     ensure => present,
-    path   => "${windows_autoupdate::params::p_reg_key}\AUOptions",
+    path   => "${windows_autoupdate::params::p_reg_key}\\AUOptions",
     type   => 'dword',
     data   => $aUOptions
   }
 
   registry_value { 'ScheduledInstallDay':
     ensure => present,
-    path   => "${windows_autoupdate::params::p_reg_key}\ScheduledInstallDay",
+    path   => "${windows_autoupdate::params::p_reg_key}\\ScheduledInstallDay",
     type   => 'dword',
     data   => $scheduledInstallDay,
   }
 
   registry_value { 'ScheduledInstallTime':
     ensure => present,
-    path   => "${windows_autoupdate::params::p_reg_key}\ScheduledInstallTime",
+    path   => "${windows_autoupdate::params::p_reg_key}\\ScheduledInstallTime",
     type   => 'dword',
     data   => $scheduledInstallTime,
   }
 
   registry_value { 'UseWUServer':
     ensure => present,
-    path   => "${windows_autoupdate::params::p_reg_key}\UseWUServer",
+    path   => "${windows_autoupdate::params::p_reg_key}\\UseWUServer",
     type   => 'dword',
     data   => $useWUServer
   }
 
   registry_value { 'RescheduleWaitTime':
     ensure => present,
-    path   => "${windows_autoupdate::params::p_reg_key}\RescheduleWaitTime",
+    path   => "${windows_autoupdate::params::p_reg_key}\\RescheduleWaitTime",
     type   => 'dword',
     data   => $rescheduleWaitTime
   }
 
   registry_value { 'NoAutoRebootWithLoggedOnUsers':
     ensure => present,
-    path   => "${windows_autoupdate::params::p_reg_key}\NoAutoRebootWithLoggedOnUsers",
+    path   => "${windows_autoupdate::params::p_reg_key}\\NoAutoRebootWithLoggedOnUsers",
     type   => 'dword',
     data   => $noAutoRebootWithLoggedOnUsers
   }
