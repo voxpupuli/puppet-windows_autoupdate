@@ -12,7 +12,6 @@ class windows_autoupdate(
   $noAutoRebootWithLoggedOnUsers = $windows_autoupdate::params::noAutoRebootWithLoggedOnUsers
 ) inherits windows_autoupdate::params {
 
-<<<<<<< HEAD
   validate_re($noAutoUpdate,['^[0,1]$'])
   validate_re($aUOptions,['^[1-4]$'])
   validate_re($scheduledInstallDay,['^[0-7]$'])
