@@ -12,12 +12,13 @@ class windows_autoupdate(
   $noAutoRebootWithLoggedOnUsers = $windows_autoupdate::params::noAutoRebootWithLoggedOnUsers
 ) inherits windows_autoupdate::params {
 
+<<<<<<< HEAD
   validate_re($noAutoUpdate,['^[0,1]$'])
   validate_re($aUOptions,['^[1-4]$'])
   validate_re($scheduledInstallDay,['^[0-7]$'])
-  validate_re($scheduledInstallTime,['^[0-23]$'])
+  validate_re($scheduledInstallTime,['^(2[0-3]|1?[0-9])$'])
   validate_re($useWUServer,['^[0,1]$'])
-  validate_re($rescheduleWaitTime,['^[1-60]$'])
+  validate_re($rescheduleWaitTime,['^(60|[1-5][0-9]|[1-9])$'])
   validate_re($noAutoRebootWithLoggedOnUsers,['^[0,1]$'])
 
   service { 'wuauserv':
