@@ -23,8 +23,7 @@ class windows_autoupdate(
   service { 'wuauserv':
     ensure    => 'running',
     enable    => true,
-    subscribe => Registry_value['NoAutoUpdate','AUOptions','ScheduledInstallDay',
-                                'ScheduledInstallTime','UseWUServer','RescheduleWaitTime','NoAutoRebootWithLoggedOnUsers']
+    subscribe => Registry_value['NoAutoUpdate','AUOptions','ScheduledInstallDay', 'ScheduledInstallTime','UseWUServer','RescheduleWaitTime','NoAutoRebootWithLoggedOnUsers']
   }
 
   registry_key { $windows_autoupdate::params::p_reg_key:
