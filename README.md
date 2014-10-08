@@ -3,8 +3,8 @@
 ####Table of Contents
 
 1. [Overview](#overview)
-2. [Module Description - What is the homes module?](#module-description)
-3. [Setup - The basics of getting started with homes](#setup)
+2. [Module Description - What is the windows_autoupdate module?](#module-description)
+3. [Setup - The basics of getting started with windows_autoupdate](#setup)
     * [What windows_autoupdate affects](#what-autoupdates-affects)
     * [Setup requirements](#setup-requirements)
     * [Beginning with windows_autoupdate](#beginning-with-autoupdates)
@@ -17,8 +17,7 @@
 
 Puppet module for managing [Microsoft Windows Automatic Updates](http://support.microsoft.com/kb/328010).
 
-[![Build
-Status](https://secure.travis-ci.org/liamjbennett/puppet-windows_autoupdate.png)](http://travis-ci.org/liamjbennett/puppet-windows_autoupdate)
+[![Build Status](https://secure.travis-ci.org/liamjbennett/puppet-windows_autoupdate.png)](http://travis-ci.org/liamjbennett/puppet-windows_autoupdate)
 
 ##Module Description
 
@@ -26,11 +25,11 @@ This module configures all the relevant windows registry keys used to manage win
 
 ##Setup
 
-###What homes affects
+###What autoupdates affects
 
 * Configures registry keys/values
 
-###Beginning with homes
+###Beginning with autoupdate
 
 Manage autoupdates with default settings:
 
