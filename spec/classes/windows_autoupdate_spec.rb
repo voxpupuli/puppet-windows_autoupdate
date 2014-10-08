@@ -1,5 +1,12 @@
 require 'spec_helper'
-require 'facets/string/titlecase'
+
+class String
+  def titlecase
+    tr('_', ' ').
+    gsub(/\s+/, ' ').
+    gsub(/\b\w/){ $`[-1,1] == "'" ? $& : $&.upcase }
+  end
+end
 
 $p_reg_key = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU'
 
