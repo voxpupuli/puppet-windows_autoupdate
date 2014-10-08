@@ -1,11 +1,20 @@
+# Author::    Liam Bennett (mailto:liamjbennett@gmail.com)
+# Copyright:: Copyright (c) 2014 Liam Bennett
+# License::   MIT
+
+# == Class windows_autoupdate::params
+#
+# This class is meant to be called from `windows_autoupdate`
+# It sets variables according to platform
 #
 class windows_autoupdate::params {
-    $noAutoUpdate = hiera('au_noAutoUpdate','0')
-    $aUOptions = hiera('au_aUOptions','4')
-    $scheduledInstallDay = hiera('au_scheduledInstallDay','1')
-    $scheduledInstallTime = hiera('au_scheduledInstallTime','10')
-    $useWUServer = hiera('au_useWUServer','0')
-    $rescheduleWaitTime = hiera('au_rescheduleWaitTime','10')
-    $noAutoRebootWithLoggedOnUsers = hiera('au_noAutoRebootWithLoggedOnUsers','0')
-    $p_reg_key = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU'
+
+  $noAutoUpdate = '0'
+  $aUOptions = '4'
+  $scheduledInstallDay = '1'
+  $scheduledInstallTime = '10'
+  $useWUServer = '0'
+  $rescheduleWaitTime = '10'
+  $noAutoRebootWithLoggedOnUsers = '0'
+  $p_reg_key = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU'
 }

@@ -1,3 +1,5 @@
+# puppet-windows_autoupdate
+
 ####Table of Contents
 
 1. [Overview](#overview)
@@ -15,8 +17,6 @@
 
 Puppet module for managing [Microsoft Windows Automatic Updates](http://support.microsoft.com/kb/328010).
 
-This module is also available on the [Puppet Forge](https://forge.puppetlabs.com/liamjbennett/windows_autoupdate)
-
 [![Build
 Status](https://secure.travis-ci.org/liamjbennett/puppet-windows_autoupdate.png)](http://travis-ci.org/liamjbennett/puppet-windows_autoupdate)
 
@@ -29,7 +29,6 @@ This module configures all the relevant windows registry keys used to manage win
 ###What homes affects
 
 * Configures registry keys/values
-
 
 ###Beginning with homes
 
@@ -77,7 +76,7 @@ The homes module primary classes, `windows_autoupdate`, configures all the regis
 
 #####`noAutoRebootWithLoggedOnUsers`
   * 1 to prevent automatic reboot while users are logged on.
-  
+
 ##Reference
 
 ###Classes
@@ -88,7 +87,7 @@ The homes module primary classes, `windows_autoupdate`, configures all the regis
 
 This module is tested on the following platforms:
 
-* Windows Server 2008 R2
+* Windows 2008 R2
 
 It is tested with the OSS version of Puppet only.
 
@@ -97,14 +96,3 @@ It is tested with the OSS version of Puppet only.
 ###Contributing
 
 Please read CONTRIBUTING.md for full details on contributing to this project.
-
-###Running tests
-
-This project contains tests for both [rspec-puppet](http://rspec-puppet.com/) and [beaker](https://github.com/puppetlabs/beaker) to verify functionality. For in-depth information please see their respective documentation.
-
-Quickstart:
-
-    gem install bundler
-    bundle install
-    bundle exec rake spec
-	  BEAKER_DEBUG=yes bundle exec rspec spec/acceptance

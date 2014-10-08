@@ -1,33 +1,26 @@
 {
-  "operatingsystem_support": [
-      { "operatingsystem": "Windows" },
-  ],
-  "requirements": [
-    {
-      "name": "pe",
-      "version_requirement": "3.2.x"
-    },
-    {
-      "name": "puppet",
-      "version_requirement": "3.x"
-    }
-  ],
   "name":         "liamjbennett-windows_autoupdate",
   "version":      "0.2.0",
-  "source":       "git://github.com/liamjbennett/puppet-windows_autoupdate.git",
   "author":       "liamjbennett",
-  "summary":      "Module for managing windows automatic updates",
-  "description":  "Manage the local setting for performing automatic updates on your windows machine",
-  "project_page": "https://github.com/liamjbennett/puppet-windows_autoupdate",
   "license":      "MIT",
+  "summary":      "Module for managing windows automatic updates",
+  "source":       "https://github.com/liamjbennett/puppet-windows_autoupdate",
+  "project_page": "https://github.com/liamjbennett/puppet-windows_autoupdate",
+  "issues_url":   "https://github.com/liamjbennett/puppet-windows_autoupdate/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "windows",
+      "operatingsystemrelease": ["6.1.7600","6.1.7601", "6.2.9200", "6.3.9200", "6.3.9600"]
+    }
+  ],
   "dependencies": [
     {
-	  "name": "puppetlabs/stdlib",
-	  "version_requirement": ">= 3.0.0"
-	},
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.0.0 <5.0.0"
+    },
     {
-        "name": "puppetlabs/registry",
-        "version_requirement": ">= 0.1.2"
+      "name": "puppetlabs/registry",
+      "version_requirement": ">= 1.0.0 <2.0.0"
     }
   ]
 }
