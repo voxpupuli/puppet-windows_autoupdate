@@ -48,7 +48,7 @@ Disable auto updates:
 ###Classes and Defined Types
 
 ####Class: `windows_autoupdate`
-The homes module primary classes, `windows_autoupdate`, configures all the registry settings required to manage auto updates.
+The autoupdate module primary classes, `windows_autoupdate`, configures all the registry settings required to manage auto updates.
 
 **Parameters within `windows_autoupdates`:**
 #####`noAutoUpdate`
