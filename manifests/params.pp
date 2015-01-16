@@ -4,7 +4,7 @@
 
 # == Class windows_autoupdate::params
 #
-# This class is meant to be called from `windows_autoupdate`
+# This private class is meant to be called from `windows_autoupdate`
 # It sets variables according to platform
 #
 class windows_autoupdate::params {
@@ -16,5 +16,11 @@ class windows_autoupdate::params {
   $useWUServer = '0'
   $rescheduleWaitTime = '10'
   $noAutoRebootWithLoggedOnUsers = '0'
-  $p_reg_key = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU'
+
+  if $::operatingsystemrelease == 'Server 2012' {
+    $p_reg_key = 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update'
+  } else {
+    $p_reg_key = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU'
+  }
+
 }
