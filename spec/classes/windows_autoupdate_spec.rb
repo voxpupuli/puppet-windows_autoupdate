@@ -17,7 +17,7 @@ $defaults = { 'noAutoUpdate' => '0', 'aUOptions' => '4', 'scheduledInstallDay' =
 describe 'windows_autoupdate', :type => :class do
 
   let :facts do
-    { :operatingsystemversion => 'Windows Server 2008 R2' }
+    { :operatingsystemrelease => '2008 R2' }
   end
 
   let :hiera_data do
