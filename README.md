@@ -17,7 +17,7 @@
 
 Puppet module for managing [Microsoft Windows Automatic Updates](http://support.microsoft.com/kb/328010).
 
-[![Build Status](https://secure.travis-ci.org/liamjbennett/puppet-windows_autoupdate.png)](http://travis-ci.org/liamjbennett/puppet-windows_autoupdate)
+[![Build Status](https://secure.travis-ci.org/puppet-community/puppet-windows_autoupdate.png)](http://travis-ci.org/puppet-community/puppet-windows_autoupdate)
 
 ##Module Description
 
