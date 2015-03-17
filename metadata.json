@@ -1,16 +1,16 @@
 {
-  "name":         "liamjbennett-windows_autoupdate",
-  "version":      "0.1.0",
-  "author":       "liamjbennett",
-  "license":      "MIT",
+  "name":         "puppet-windows_autoupdate",
+  "version":      "1.0.0",
+  "author":       "puppetcommunity",
+  "license":      "Apache 2.0",
   "summary":      "Module for managing windows automatic updates",
-  "source":       "https://github.com/liamjbennett/puppet-windows_autoupdate",
-  "project_page": "https://github.com/liamjbennett/puppet-windows_autoupdate",
-  "issues_url":   "https://github.com/liamjbennett/puppet-windows_autoupdate/issues",
+  "source":       "https://github.com/puppet-community/puppet-windows_autoupdate",
+  "project_page": "https://github.com/puppet-community/puppet-windows_autoupdate",
+  "issues_url":   "https://github.com/puppet-community/puppet-windows_autoupdate/issues",
   "operatingsystem_support": [
     {
       "operatingsystem": "windows",
-      "operatingsystemrelease": ["Server 2008","Server 2008 R2", "Server 2012"]
+      "operatingsystemrelease": [ "2008", "2008 R2", "2012", "2012 R2" ]
     }
   ],
   "dependencies": [
