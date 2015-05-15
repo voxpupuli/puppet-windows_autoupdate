@@ -14,6 +14,8 @@ class windows_autoupdate::params {
   $scheduledInstallDay = '1'
   $scheduledInstallTime = '10'
   $useWUServer = '0'
+  $wUServer = ''
+  $wUStatusServer = ''
   $rescheduleWaitTime = '10'
   $noAutoRebootWithLoggedOnUsers = '0'
 
@@ -21,6 +23,7 @@ class windows_autoupdate::params {
     $p_reg_key = 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update'
   } else {
     $p_reg_key = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU'
+    $p_reg_keyServ = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate'
   }
 
 }
