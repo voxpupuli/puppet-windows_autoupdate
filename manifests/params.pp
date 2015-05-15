@@ -15,6 +15,7 @@ class windows_autoupdate::params {
   $scheduledInstallTime = '10'
   $useWUServer = '0'
   $wUServer = ''
+  $wUStatusServer = ''
   $rescheduleWaitTime = '10'
   $noAutoRebootWithLoggedOnUsers = '0'
 
