@@ -70,6 +70,12 @@ The autoupdate module primary classes, `windows_autoupdate`, configures all the 
 #####`useWUServer`
   * 1 to use custom update server
 
+#####`wUServer`
+  * URL to the custom update server
+
+#####`wUStatusServer`
+  * URL to the custom update status server
+
 #####`rescheduleWaitTime`
   * The number of minutes to wait after service start time before performing the installation.
 
