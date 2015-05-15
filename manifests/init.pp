@@ -36,6 +36,9 @@
 # [*useWUServer*]
 # If set to 1, windows autoupdates will use a local WSUS server rather than windows update.
 #
+# [*wUServer*]
+# If useWUServer is set to 1, windows autoupdates will use THIS local WSUS server rather than windows update.
+#
 # [*rescheduleWaitTime*]
 # The time period to wait between the time Automatic Updates starts and the time it begins installations
 # where the scheduled times have passed. The time is set in minutes from 1 to 60
@@ -59,6 +62,7 @@ class windows_autoupdate(
   $scheduledInstallDay           = $windows_autoupdate::params::scheduledInstallDay,
   $scheduledInstallTime          = $windows_autoupdate::params::scheduledInstallTime,
   $useWUServer                   = $windows_autoupdate::params::useWUServer,
+  $wUServer                      = $windows_autoupdate::params::wUServer,
   $rescheduleWaitTime            = $windows_autoupdate::params::rescheduleWaitTime,
   $noAutoRebootWithLoggedOnUsers = $windows_autoupdate::params::noAutoRebootWithLoggedOnUsers
 ) inherits windows_autoupdate::params {
@@ -68,16 +72,21 @@ class windows_autoupdate(
   validate_re($scheduledInstallDay,['^[0-7]$'])
   validate_re($scheduledInstallTime,['^(2[0-3]|1?[0-9])$'])
   validate_re($useWUServer,['^[0,1]$'])
+  validate_re($wUServer,['^*$'])
   validate_re($rescheduleWaitTime,['^(60|[1-5][0-9]|[1-9])$'])
   validate_re($noAutoRebootWithLoggedOnUsers,['^[0,1]$'])
 
   service { 'wuauserv':
     ensure    => 'running',
     enable    => true,
-    subscribe => Registry_value['NoAutoUpdate','AUOptions','ScheduledInstallDay', 'ScheduledInstallTime','UseWUServer','RescheduleWaitTime','NoAutoRebootWithLoggedOnUsers']
+    subscribe => Registry_value['NoAutoUpdate','AUOptions','ScheduledInstallDay', 'ScheduledInstallTime','UseWUServer','WUServer','RescheduleWaitTime','NoAutoRebootWithLoggedOnUsers']
   }
 
   registry_key { $windows_autoupdate::params::p_reg_key:
+    ensure => present
+  }
+
+  registry_key { $windows_autoupdate::params::p_reg_keyServ:
     ensure => present
   }
 
@@ -114,6 +123,13 @@ class windows_autoupdate(
     path   => "${windows_autoupdate::params::p_reg_key}\\UseWUServer",
     type   => 'dword',
     data   => $useWUServer
+  }
+
+  registry_value { 'WUServer':
+    ensure => present,
+    path   => "${windows_autoupdate::params::p_reg_keyServ}\\WUServer",
+    type   => 'string',
+    data   => $wUServer
   }
 
   registry_value { 'RescheduleWaitTime':
