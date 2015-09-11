@@ -1,6 +1,6 @@
 {
   "name":         "puppet-windows_autoupdate",
-  "version":      "1.0.2",
+  "version":      "1.0.3",
   "author":       "puppetcommunity",
   "license":      "Apache 2.0",
   "summary":      "Module for managing windows automatic updates",
