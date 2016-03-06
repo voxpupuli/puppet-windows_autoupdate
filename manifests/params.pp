@@ -9,13 +9,21 @@
 #
 class windows_autoupdate::params {
 
-  $noAutoUpdate = '0'
-  $aUOptions = '4'
-  $scheduledInstallDay = '1'
-  $scheduledInstallTime = '10'
-  $useWUServer = '0'
-  $rescheduleWaitTime = '10'
-  $noAutoRebootWithLoggedOnUsers = '0'
+  $noAutoUpdate = undef
+  $aUOptions = undef
+  $scheduledInstallDay = undef
+  $scheduledInstallTime = undef
+  $useWUServer = undef
+  $rescheduleWaitTime = undef
+  $noAutoRebootWithLoggedOnUsers = undef
+
+  $au_options                          = '4'
+  $no_auto_reboot_with_logged_on_users = '0'
+  $no_auto_update                      = '0'
+  $reschedule_wait_time                = '10'
+  $scheduled_install_day               = '1'
+  $scheduled_install_time              = '10'
+  $use_wuserver                        = '0'
 
   if $::operatingsystemrelease == 'Server 2012' {
     $p_reg_key = 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update'
