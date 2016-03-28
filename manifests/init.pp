@@ -54,14 +54,6 @@
 #   class { 'windows_autoupdate': no_auto_update => '1' }
 #
 class windows_autoupdate(
-  $noAutoUpdate                  = $windows_autoupdate::params::noAutoUpdate,
-  $aUOptions                     = $windows_autoupdate::params::aUOptions,
-  $scheduledInstallDay           = $windows_autoupdate::params::scheduledInstallDay,
-  $scheduledInstallTime          = $windows_autoupdate::params::scheduledInstallTime,
-  $useWUServer                   = $windows_autoupdate::params::useWUServer,
-  $rescheduleWaitTime            = $windows_autoupdate::params::rescheduleWaitTime,
-  $noAutoRebootWithLoggedOnUsers = $windows_autoupdate::params::noAutoRebootWithLoggedOnUsers,
-
   $au_options                          = $windows_autoupdate::params::au_options,
   $no_auto_reboot_with_logged_on_users = $windows_autoupdate::params::no_auto_reboot_with_logged_on_users,
   $no_auto_update                      = $windows_autoupdate::params::no_auto_update,
@@ -71,119 +63,70 @@ class windows_autoupdate(
   $use_wuserver                        = $windows_autoupdate::params::use_wuserver,
 ) inherits windows_autoupdate::params {
 
-  if $aUOptions {
-    warning("${module_name}: The use of aUOptions is deprecated. Use au_options instead.")
-    $real_au_options = $aUOptions
-  } else {
-    $real_au_options = $au_options
-  }
-
-  if $noAutoRebootWithLoggedOnUsers {
-    warning("${module_name}: The use of noAutoRebootWithLoggedOnUsers is deprecated. Use no_auto_reboot_with_logged_on_users instead.")
-    $real_no_auto_reboot_with_logged_on_users = $noAutoRebootWithLoggedOnUsers
-  } else {
-    $real_no_auto_reboot_with_logged_on_users = $no_auto_reboot_with_logged_on_users
-  }
-
-  if $noAutoUpdate {
-    warning("${module_name}: The use of noAutoUpdate is deprecated. Use no_auto_update instead.")
-    $real_no_auto_update = $noAutoUpdate
-  } else {
-    $real_no_auto_update = $no_auto_update
-  }
-
-  if $rescheduleWaitTime {
-    warning("${module_name}: The use of rescheduleWaitTime is deprecated. Use reschedule_wait_time instead.")
-    $real_reschedule_wait_time = $rescheduleWaitTime
-  } else {
-    $real_reschedule_wait_time = $reschedule_wait_time
-  }
-
-  if $scheduledInstallDay {
-    warning("${module_name}: The use of scheduledInstallDay is deprecated. Use scheduled_install_day instead.")
-    $real_scheduled_install_day = $scheduledInstallDay
-  } else {
-    $real_scheduled_install_day = $scheduled_install_day
-  }
-
-  if $scheduledInstallTime {
-    warning("${module_name}: The use of cheduledInstallTime is deprecated. Use scheduled_install_time instead.")
-    $real_scheduled_install_time = $scheduledInstallTime
-  } else {
-    $real_scheduled_install_time = $scheduled_install_time
-  }
-
-  if $useWUServer {
-    warning("${module_name}: The use of useWUServer is deprecated. Use use_wuserver instead.")
-    $real_use_wuserver = $useWUServer
-  } else {
-    $real_use_wuserver = $use_wuserver
-  }
-
-  validate_re($real_no_auto_update,['^[0,1]$'])
-  validate_re($real_au_options,['^[1-4]$'])
-  validate_re($real_scheduled_install_day,['^[0-7]$'])
-  validate_re($real_scheduled_install_time,['^(2[0-3]|1?[0-9])$'])
-  validate_re($real_use_wuserver,['^[0,1]$'])
-  validate_re($real_reschedule_wait_time,['^(60|[1-5][0-9]|[1-9])$'])
-  validate_re($real_no_auto_reboot_with_logged_on_users,['^[0,1]$'])
+  validate_re($no_auto_update,['^[0,1]$'])
+  validate_re($au_options,['^[1-4]$'])
+  validate_re($scheduled_install_day,['^[0-7]$'])
+  validate_re($scheduled_install_time,['^(2[0-3]|1?[0-9])$'])
+  validate_re($use_wuserver,['^[0,1]$'])
+  validate_re($reschedule_wait_time,['^(60|[1-5][0-9]|[1-9])$'])
+  validate_re($no_auto_reboot_with_logged_on_users,['^[0,1]$'])
 
   service { 'wuauserv':
     ensure    => 'running',
     enable    => true,
-    subscribe => Registry_value['NoAutoUpdate','AUOptions','ScheduledInstallDay', 'ScheduledInstallTime','UseWUServer','RescheduleWaitTime','NoAutoRebootWithLoggedOnUsers']
+    subscribe => Registry_value['NoAutoUpdate','AUOptions','ScheduledInstallDay', 'ScheduledInstallTime','UseWUServer','RescheduleWaitTime','NoAutoRebootWithLoggedOnUsers'],
   }
 
   registry_key { $windows_autoupdate::params::p_reg_key:
-    ensure => present
+    ensure => present,
   }
 
   registry_value { 'NoAutoUpdate':
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\NoAutoUpdate",
     type   => 'dword',
-    data   => $real_no_auto_update
+    data   => $no_auto_update,
   }
 
   registry_value { 'AUOptions':
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\AUOptions",
     type   => 'dword',
-    data   => $real_au_options
+    data   => $au_options,
   }
 
   registry_value { 'ScheduledInstallDay':
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\ScheduledInstallDay",
     type   => 'dword',
-    data   => $real_scheduled_install_day
+    data   => $scheduled_install_day,
   }
 
   registry_value { 'ScheduledInstallTime':
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\ScheduledInstallTime",
     type   => 'dword',
-    data   => $real_scheduled_install_time
+    data   => $scheduled_install_time,
   }
 
   registry_value { 'UseWUServer':
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\UseWUServer",
     type   => 'dword',
-    data   => $real_use_wuserver
+    data   => $use_wuserver,
   }
 
   registry_value { 'RescheduleWaitTime':
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\RescheduleWaitTime",
     type   => 'dword',
-    data   => $real_reschedule_wait_time
+    data   => $reschedule_wait_time,
   }
 
   registry_value { 'NoAutoRebootWithLoggedOnUsers':
     ensure => present,
     path   => "${windows_autoupdate::params::p_reg_key}\\NoAutoRebootWithLoggedOnUsers",
     type   => 'dword',
-    data   => $real_no_auto_reboot_with_logged_on_users
+    data   => $no_auto_reboot_with_logged_on_users,
   }
 }

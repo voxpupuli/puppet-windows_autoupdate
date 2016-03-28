@@ -9,14 +9,6 @@
 #
 class windows_autoupdate::params {
 
-  $noAutoUpdate = undef
-  $aUOptions = undef
-  $scheduledInstallDay = undef
-  $scheduledInstallTime = undef
-  $useWUServer = undef
-  $rescheduleWaitTime = undef
-  $noAutoRebootWithLoggedOnUsers = undef
-
   $au_options                          = '4'
   $no_auto_reboot_with_logged_on_users = '0'
   $no_auto_update                      = '0'

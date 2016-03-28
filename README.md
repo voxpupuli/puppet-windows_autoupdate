@@ -52,35 +52,35 @@ Disable auto updates:
 The autoupdate module primary classes, `windows_autoupdate`, configures all the registry settings required to manage auto updates.
 
 **Parameters within `windows_autoupdates`:**
-##### `noAutoUpdate`
+##### `no_auto_update`
 
 * 0 - Enable Automatic Updates (Default)
 * 1 - Disable Automatic Updates
 
-##### `aUOptions`
+##### `au_options`
 
 * 2 - Notify for download and notify for install
 * 3 - Auto download and notify for install
 * 4 - Auto download and schedule the install
 
-##### `scheduledInstallDay`
+##### `scheduled_install_day`
 
 * 0 - Install every day
 * 1 to 7 - Install on specific day of the week from Sunday (1) to Saturday (7).
 
-##### `scheduledInstallTime`
+##### `scheduled_install_time`
 
 * 0 to 23 - Install time of day in 24-hour format
 
-##### `useWUServer`
+##### `use_wuserver`
 
 * 1 to use custom update server
 
-##### `rescheduleWaitTime`
+##### `reschedule_wait_time`
 
 * The number of minutes to wait after service start time before performing the installation.
 
-##### `noAutoRebootWithLoggedOnUsers`
+##### `no_auto_reboot_with_logged_on_users`
 
 * 1 to prevent automatic reboot while users are logged on.
 
