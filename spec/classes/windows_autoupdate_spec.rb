@@ -25,52 +25,66 @@ describe 'windows_autoupdate', type: :class do
     end
     it { should contain_registry_key(p_reg_key) }
 
-    it { should contain_registry_value('NoAutoUpdate').with(
-      'ensure'  => 'present',
-      'path'    => "#{p_reg_key}\\NoAutoUpdate",
-      'type'    => 'dword',
-      'data'    => 0)
-    }
+    it do
+      should contain_registry_value('NoAutoUpdate').with(
+        'ensure'  => 'present',
+        'path'    => "#{p_reg_key}\\NoAutoUpdate",
+        'type'    => 'dword',
+        'data'    => 0
+      )
+    end
 
-    it { should contain_registry_value('AUOptions').with(
-      'ensure'  => 'present',
-      'path'    => "#{p_reg_key}\\AUOptions",
-      'type'    => 'dword',
-      'data'    => 4)
-    }
+    it do
+      should contain_registry_value('AUOptions').with(
+        'ensure'  => 'present',
+        'path'    => "#{p_reg_key}\\AUOptions",
+        'type'    => 'dword',
+        'data'    => 4
+      )
+    end
 
-    it { should contain_registry_value('ScheduledInstallDay').with(
-      'ensure'  => 'present',
-      'path'    => "#{p_reg_key}\\ScheduledInstallDay",
-      'type'    => 'dword',
-      'data'    => 1)
-    }
+    it do
+      should contain_registry_value('ScheduledInstallDay').with(
+        'ensure'  => 'present',
+        'path'    => "#{p_reg_key}\\ScheduledInstallDay",
+        'type'    => 'dword',
+        'data'    => 1
+      )
+    end
 
-    it { should contain_registry_value('UseWUServer').with(
-      'ensure'  => 'present',
-      'path'    => "#{p_reg_key}\\UseWUServer",
-      'type'    => 'dword',
-      'data'    => 0)
-    }
+    it do
+      should contain_registry_value('UseWUServer').with(
+        'ensure'  => 'present',
+        'path'    => "#{p_reg_key}\\UseWUServer",
+        'type'    => 'dword',
+        'data'    => 0
+      )
+    end
 
-    it { should contain_registry_value('RescheduleWaitTime').with(
-      'ensure'  => 'present',
-      'path'    => "#{p_reg_key}\\RescheduleWaitTime",
-      'type'    => 'dword',
-      'data'    => 10)
-    }
+    it do
+      should contain_registry_value('RescheduleWaitTime').with(
+        'ensure'  => 'present',
+        'path'    => "#{p_reg_key}\\RescheduleWaitTime",
+        'type'    => 'dword',
+        'data'    => 10
+      )
+    end
 
-    it { should contain_registry_value('NoAutoRebootWithLoggedOnUsers').with(
-      'ensure'  => 'present',
-      'path'    => "#{p_reg_key}\\NoAutoRebootWithLoggedOnUsers",
-      'type'    => 'dword',
-      'data'    => 0)
-    }
+    it do
+      should contain_registry_value('NoAutoRebootWithLoggedOnUsers').with(
+        'ensure'  => 'present',
+        'path'    => "#{p_reg_key}\\NoAutoRebootWithLoggedOnUsers",
+        'type'    => 'dword',
+        'data'    => 0
+      )
+    end
 
-    it { should contain_service('wuauserv').with(
-      'ensure' => 'running',
-      'enable' => 'true')
-    }
+    it do
+      should contain_service('wuauserv').with(
+        'ensure' => 'running',
+        'enable' => 'true'
+      )
+    end
   end
 
   context 'passing custom params' do
