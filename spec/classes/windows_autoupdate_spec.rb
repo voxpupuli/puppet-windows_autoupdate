@@ -23,10 +23,10 @@ describe 'windows_autoupdate', type: :class do
         scheduled_install_time: '1', use_wuserver: '0', reschedule_wait_time: '10',
         no_auto_reboot_with_logged_on_users: '0' }
     end
-    it { should contain_registry_key(p_reg_key) }
+    it { is_expected.to contain_registry_key(p_reg_key) }
 
     it do
-      should contain_registry_value('NoAutoUpdate').with(
+      is_expected.to contain_registry_value('NoAutoUpdate').with(
         'ensure'  => 'present',
         'path'    => "#{p_reg_key}\\NoAutoUpdate",
         'type'    => 'dword',
@@ -35,7 +35,7 @@ describe 'windows_autoupdate', type: :class do
     end
 
     it do
-      should contain_registry_value('AUOptions').with(
+      is_expected.to contain_registry_value('AUOptions').with(
         'ensure'  => 'present',
         'path'    => "#{p_reg_key}\\AUOptions",
         'type'    => 'dword',
@@ -44,7 +44,7 @@ describe 'windows_autoupdate', type: :class do
     end
 
     it do
-      should contain_registry_value('ScheduledInstallDay').with(
+      is_expected.to contain_registry_value('ScheduledInstallDay').with(
         'ensure'  => 'present',
         'path'    => "#{p_reg_key}\\ScheduledInstallDay",
         'type'    => 'dword',
@@ -53,7 +53,7 @@ describe 'windows_autoupdate', type: :class do
     end
 
     it do
-      should contain_registry_value('UseWUServer').with(
+      is_expected.to contain_registry_value('UseWUServer').with(
         'ensure'  => 'present',
         'path'    => "#{p_reg_key}\\UseWUServer",
         'type'    => 'dword',
@@ -62,7 +62,7 @@ describe 'windows_autoupdate', type: :class do
     end
 
     it do
-      should contain_registry_value('RescheduleWaitTime').with(
+      is_expected.to contain_registry_value('RescheduleWaitTime').with(
         'ensure'  => 'present',
         'path'    => "#{p_reg_key}\\RescheduleWaitTime",
         'type'    => 'dword',
@@ -71,7 +71,7 @@ describe 'windows_autoupdate', type: :class do
     end
 
     it do
-      should contain_registry_value('NoAutoRebootWithLoggedOnUsers').with(
+      is_expected.to contain_registry_value('NoAutoRebootWithLoggedOnUsers').with(
         'ensure'  => 'present',
         'path'    => "#{p_reg_key}\\NoAutoRebootWithLoggedOnUsers",
         'type'    => 'dword',
@@ -80,7 +80,7 @@ describe 'windows_autoupdate', type: :class do
     end
 
     it do
-      should contain_service('wuauserv').with(
+      is_expected.to contain_service('wuauserv').with(
         'ensure' => 'running',
         'enable' => 'true'
       )
@@ -99,13 +99,13 @@ describe 'windows_autoupdate', type: :class do
         no_auto_reboot_with_logged_on_users: '1'
       }
     end
-    it { should contain_registry_value('NoAutoUpdate').with('data' => '1') }
-    it { should contain_registry_value('AUOptions').with('data' => '1') }
-    it { should contain_registry_value('ScheduledInstallDay').with('data' => '5') }
-    it { should contain_registry_value('ScheduledInstallTime').with('data' => '1') }
-    it { should contain_registry_value('UseWUServer').with('data' => '1') }
-    it { should contain_registry_value('RescheduleWaitTime').with('data' => '1') }
-    it { should contain_registry_value('NoAutoRebootWithLoggedOnUsers').with('data' => '1') }
+    it { is_expected.to contain_registry_value('NoAutoUpdate').with('data' => '1') }
+    it { is_expected.to contain_registry_value('AUOptions').with('data' => '1') }
+    it { is_expected.to contain_registry_value('ScheduledInstallDay').with('data' => '5') }
+    it { is_expected.to contain_registry_value('ScheduledInstallTime').with('data' => '1') }
+    it { is_expected.to contain_registry_value('UseWUServer').with('data' => '1') }
+    it { is_expected.to contain_registry_value('RescheduleWaitTime').with('data' => '1') }
+    it { is_expected.to contain_registry_value('NoAutoRebootWithLoggedOnUsers').with('data' => '1') }
   end
 
   invalid_params.keys.each do |key, _value|
