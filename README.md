@@ -1,17 +1,23 @@
-# puppet-windows_autoupdate
+# Windows Automatic Updates module for Puppet
+
+[![Build Status](https://travis-ci.org/voxpupuli/puppet-windows_autoupdate.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-windows_autoupdate)
+[![Code Coverage](https://coveralls.io/repos/github/voxpupuli/puppet-windows_autoupdate/badge.svg?branch=master)](https://coveralls.io/github/voxpupuli/puppet-windows_autoupdate)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/puppet/windows_autoupdate.svg)](https://forge.puppetlabs.com/puppet/windows_autoupdate)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/puppet/windows_autoupdate.svg)](https://forge.puppetlabs.com/puppet/windows_autoupdate)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/puppet/windows_autoupdate.svg)](https://forge.puppetlabs.com/puppet/windows_autoupdate)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/puppet/windows_autoupdate.svg)](https://forge.puppetlabs.com/puppet/windows_autoupdate)
 
 #### Table of Contents
 
 1. [Overview](#overview)
-2. [Module Description - What is the windows_autoupdate module?](#module-description)
-3. [Setup - The basics of getting started with windows_autoupdate](#setup)
+1. [Module Description - What is the windows_autoupdate module?](#module-description)
+1. [Setup - The basics of getting started with windows_autoupdate](#setup)
     * [What windows_autoupdate affects](#what-autoupdates-affects)
-    * [Setup requirements](#setup-requirements)
     * [Beginning with windows_autoupdate](#beginning-with-autoupdates)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
+1. [Usage - Configuration options and additional functionality](#usage)
+1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+1. [Limitations - OS compatibility, etc.](#limitations)
+1. [Development - Guide for contributing to the module](#development)
 
 ## Overview
 
@@ -21,7 +27,8 @@ Puppet module for managing [Microsoft Windows Automatic Updates](http://support.
 
 ## Module Description
 
-This module configures all the relevant windows registry keys used to manage windows automatic update settings on your windows machine.
+This module configures all the relevant windows registry keys used to manage
+windows automatic update settings on your windows machine.
 
 ## Setup
 
@@ -49,7 +56,8 @@ Disable auto updates:
 
 #### Class: `windows_autoupdate`
 
-The autoupdate module primary classes, `windows_autoupdate`, configures all the registry settings required to manage auto updates.
+The autoupdate module primary classes, `windows_autoupdate`, configures all the
+registry settings required to manage auto updates.
 
 **Parameters within `windows_autoupdates`:**
 ##### `no_auto_update`
@@ -90,7 +98,8 @@ The autoupdate module primary classes, `windows_autoupdate`, configures all the 
 
 #### Public Classes
 
-* [`windows_autoupdates`](#class_autoupdates): Guides the basic management of windows auto update settings.
+* [`windows_autoupdates`](#class_autoupdates): Guides the basic management of
+  windows auto update settings.
 
 ## Limitations
 
