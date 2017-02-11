@@ -1,7 +1,7 @@
 {
   "name":         "puppet-windows_autoupdate",
-  "version":      "1.1.0",
-  "author":       "puppet",
+  "version":      "1.2.0",
+  "author":       "Vox Pupupli",
   "license":      "MIT",
   "summary":      "Module for managing windows automatic updates",
   "source":       "https://github.com/voxpupuli/puppet-windows_autoupdate",
