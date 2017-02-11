@@ -1,3 +1,15 @@
+# Changelog
+
+## 2017-02-11 Release 1.2.0
+
+This is the last release with Puppet3 support!
+* Remove mixed case parameters, modulesync (0.3.0)
+* Fix several Rubocop issues
+* Fix several markdown issues
+* Add missing badges
+* Fix several rubocop issues
+* Set min version_requirement for Puppet + bump deps
+
 ## 2016-03-29 Release 1.1.0
 - Deprecate mixed case parameters
 
