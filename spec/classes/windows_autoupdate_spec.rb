@@ -23,6 +23,7 @@ describe 'windows_autoupdate', type: :class do
         scheduled_install_time: '1', use_wuserver: '0', reschedule_wait_time: '10',
         no_auto_reboot_with_logged_on_users: '0' }
     end
+
     it { is_expected.to contain_registry_key(p_reg_key) }
 
     it do
@@ -99,6 +100,7 @@ describe 'windows_autoupdate', type: :class do
         no_auto_reboot_with_logged_on_users: '1'
       }
     end
+
     it { is_expected.to contain_registry_value('NoAutoUpdate').with('data' => '1') }
     it { is_expected.to contain_registry_value('AUOptions').with('data' => '1') }
     it { is_expected.to contain_registry_value('ScheduledInstallDay').with('data' => '5') }
@@ -113,6 +115,7 @@ describe 'windows_autoupdate', type: :class do
       let :params do
         { key: :value }
       end
+
       it { is_expected.to raise_error(Puppet::Error) }
     end
   end
