@@ -1,10 +1,6 @@
 fixtures:
   repositories:
-    stdlib:
-      repo: 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
-      ref: '3.2.0'
-    registry:
-      repo: 'https://github.com/puppetlabs/puppetlabs-registry.git'
-      ref: '1.0.0'
+    stdlib: 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
+    registry: 'https://github.com/puppetlabs/puppetlabs-registry.git'
   symlinks:
     windows_autoupdate: "#{source_dir}"
