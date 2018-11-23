@@ -1,21 +1,5 @@
 ---
 .travis.yml:
   secure: "DUZUJuAFjY078gBQvtSUo8JhVg722Me+Ow/OA7xCAa3/QbBv3Tq/DZreRMU6FsEaZiRzB99Cc38XtIM9T35PzVde4fKMXGW49dd1wF3/P9ei22b1PWAY+WlvAtC13LM7Re7UDYEJYMwPrLdizEHu2yHsyCH4M5Q75NDy5rC7mrQ="
-spec/acceptance/nodesets/centos-511-x64.yml:
-  unmanaged: true
-spec/acceptance/nodesets/centos-66-x64-pe.yml:
-  unmanaged: true
-spec/acceptance/nodesets/centos-66-x64.yml:
-  unmanaged: true
-spec/acceptance/nodesets/centos-72-x64.yml:
-  unmanaged: true
-spec/acceptance/nodesets/debian-78-x64.yml:
-  unmanaged: true
-spec/acceptance/nodesets/debian-82-x64.yml:
-  unmanaged: true
-spec/acceptance/nodesets/ubuntu-server-1204-x64.yml:
-  unmanaged: true
-spec/acceptance/nodesets/ubuntu-server-1404-x64.yml:
-  unmanaged: true
-spec/acceptance/nodesets/ubuntu-server-1604-x64.yml:
+spec/acceptance/nodesets/archlinux-2-x64.yml:
   unmanaged: true
