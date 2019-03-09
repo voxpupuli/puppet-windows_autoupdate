@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.0.0](https://github.com/voxpupuli/puppet-windows_autoupdate/tree/v3.0.0) (2019-03-09)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-windows_autoupdate/compare/v2.0.1...v3.0.0)
+
+**Breaking changes:**
+
+- modulesync 2.6.0 & drop Puppet 4 [\#61](https://github.com/voxpupuli/puppet-windows_autoupdate/pull/61) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Remove Linux acceptance nodesets [\#58](https://github.com/voxpupuli/puppet-windows_autoupdate/pull/58) ([ekohl](https://github.com/ekohl))
+- modulesync 2.2.0 and allow puppet 6.x [\#57](https://github.com/voxpupuli/puppet-windows_autoupdate/pull/57) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v2.0.1](https://github.com/voxpupuli/puppet-windows_autoupdate/tree/v2.0.1) (2018-09-07)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-windows_autoupdate/compare/v2.0.0...v2.0.1)
