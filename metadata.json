@@ -1,6 +1,6 @@
 {
   "name": "puppet-windows_autoupdate",
-  "version": "3.0.0",
+  "version": "3.0.1-rc0",
   "author": "Vox Pupupli",
   "license": "MIT",
   "summary": "Module for managing windows automatic updates",
