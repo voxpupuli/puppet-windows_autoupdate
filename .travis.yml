@@ -1,34 +1,36 @@
 ---
-dist: xenial
+# yamllint disable rule:line-length rule:truthy
+os: linux
+dist: focal
 language: ruby
 cache: bundler
 before_install:
-  - gem update --system
-  - gem update bundler
+  - yes | gem update --system
   - bundle --version
 script:
   - 'bundle exec rake $CHECK'
-matrix:
+jobs:
   fast_finish: true
   include:
-  - rvm: 2.4.4
-    bundler_args: --without system_tests development release
-    env: PUPPET_VERSION="~> 5.0" CHECK=test
-  - rvm: 2.5.3
-    bundler_args: --without system_tests development release
-    env: PUPPET_VERSION="~> 6.0" CHECK=test_with_coveralls
-  - rvm: 2.5.3
-    bundler_args: --without system_tests development release
-    env: PUPPET_VERSION="~> 6.0" CHECK=rubocop
-  - rvm: 2.4.4
-    bundler_args: --without system_tests development release
-    env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
+    - rvm: 2.4.4
+      bundler_args: --without system_tests development release
+      env: PUPPET_VERSION="~> 5.0" CHECK=test
+    - rvm: 2.5.3
+      bundler_args: --without system_tests development release
+      env: PUPPET_VERSION="~> 6.0" CHECK=test_with_coveralls
+    - rvm: 2.5.3
+      bundler_args: --without system_tests development release
+      env: PUPPET_VERSION="~> 6.0" CHECK=rubocop
+    - rvm: 2.4.4
+      bundler_args: --without system_tests development release
+      env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
 branches:
   only:
-  - master
-  - /^v\d/
+    - master
+    - /^v\d/
 notifications:
   email: false
+  webhooks: https://voxpupu.li/incoming/travis
   irc:
     on_success: always
     on_failure: always
@@ -36,7 +38,7 @@ notifications:
       - "chat.freenode.org#voxpupuli-notifications"
 deploy:
   provider: puppetforge
-  user: puppet
+  username: puppet
   password:
     secure: "DUZUJuAFjY078gBQvtSUo8JhVg722Me+Ow/OA7xCAa3/QbBv3Tq/DZreRMU6FsEaZiRzB99Cc38XtIM9T35PzVde4fKMXGW49dd1wF3/P9ei22b1PWAY+WlvAtC13LM7Re7UDYEJYMwPrLdizEHu2yHsyCH4M5Q75NDy5rC7mrQ="
   on:
