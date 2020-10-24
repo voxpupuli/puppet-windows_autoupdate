@@ -8,7 +8,6 @@
 # It sets variables according to platform
 #
 class windows_autoupdate::params {
-
   $au_options                          = '4'
   $no_auto_reboot_with_logged_on_users = '0'
   $no_auto_update                      = '0'
@@ -17,10 +16,9 @@ class windows_autoupdate::params {
   $scheduled_install_time              = '10'
   $use_wuserver                        = '0'
 
-  if $::operatingsystemrelease == 'Server 2012' {
+  if fact('os.release.full') == 'Server 2012' {
     $p_reg_key = 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update'
   } else {
     $p_reg_key = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU'
   }
-
 }
