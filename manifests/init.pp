@@ -53,7 +53,7 @@
 #
 #   class { 'windows_autoupdate': no_auto_update => '1' }
 #
-class windows_autoupdate(
+class windows_autoupdate (
   $au_options                          = $windows_autoupdate::params::au_options,
   $no_auto_reboot_with_logged_on_users = $windows_autoupdate::params::no_auto_reboot_with_logged_on_users,
   $no_auto_update                      = $windows_autoupdate::params::no_auto_update,
@@ -62,7 +62,6 @@ class windows_autoupdate(
   $scheduled_install_time              = $windows_autoupdate::params::scheduled_install_time,
   $use_wuserver                        = $windows_autoupdate::params::use_wuserver,
 ) inherits windows_autoupdate::params {
-
   validate_re($no_auto_update,['^[0,1]$'])
   validate_re($au_options,['^[1-4]$'])
   validate_re($scheduled_install_day,['^[0-7]$'])
