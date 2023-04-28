@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 p_reg_key = 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU'
@@ -28,55 +30,55 @@ describe 'windows_autoupdate', type: :class do
 
     it do
       is_expected.to contain_registry_value('NoAutoUpdate').with(
-        'ensure'  => 'present',
-        'path'    => "#{p_reg_key}\\NoAutoUpdate",
-        'type'    => 'dword',
-        'data'    => 0
+        'ensure' => 'present',
+        'path' => "#{p_reg_key}\\NoAutoUpdate",
+        'type' => 'dword',
+        'data' => 0
       )
     end
 
     it do
       is_expected.to contain_registry_value('AUOptions').with(
-        'ensure'  => 'present',
-        'path'    => "#{p_reg_key}\\AUOptions",
-        'type'    => 'dword',
-        'data'    => 4
+        'ensure' => 'present',
+        'path' => "#{p_reg_key}\\AUOptions",
+        'type' => 'dword',
+        'data' => 4
       )
     end
 
     it do
       is_expected.to contain_registry_value('ScheduledInstallDay').with(
-        'ensure'  => 'present',
-        'path'    => "#{p_reg_key}\\ScheduledInstallDay",
-        'type'    => 'dword',
-        'data'    => 1
+        'ensure' => 'present',
+        'path' => "#{p_reg_key}\\ScheduledInstallDay",
+        'type' => 'dword',
+        'data' => 1
       )
     end
 
     it do
       is_expected.to contain_registry_value('UseWUServer').with(
-        'ensure'  => 'present',
-        'path'    => "#{p_reg_key}\\UseWUServer",
-        'type'    => 'dword',
-        'data'    => 0
+        'ensure' => 'present',
+        'path' => "#{p_reg_key}\\UseWUServer",
+        'type' => 'dword',
+        'data' => 0
       )
     end
 
     it do
       is_expected.to contain_registry_value('RescheduleWaitTime').with(
-        'ensure'  => 'present',
-        'path'    => "#{p_reg_key}\\RescheduleWaitTime",
-        'type'    => 'dword',
-        'data'    => 10
+        'ensure' => 'present',
+        'path' => "#{p_reg_key}\\RescheduleWaitTime",
+        'type' => 'dword',
+        'data' => 10
       )
     end
 
     it do
       is_expected.to contain_registry_value('NoAutoRebootWithLoggedOnUsers').with(
-        'ensure'  => 'present',
-        'path'    => "#{p_reg_key}\\NoAutoRebootWithLoggedOnUsers",
-        'type'    => 'dword',
-        'data'    => 0
+        'ensure' => 'present',
+        'path' => "#{p_reg_key}\\NoAutoRebootWithLoggedOnUsers",
+        'type' => 'dword',
+        'data' => 0
       )
     end
 
@@ -110,7 +112,7 @@ describe 'windows_autoupdate', type: :class do
     it { is_expected.to contain_registry_value('NoAutoRebootWithLoggedOnUsers').with('data' => '1') }
   end
 
-  invalid_params.keys.each do |key, _value|
+  invalid_params.each_key do |key, _value|
     context "passing invalid param to #{key}" do
       let :params do
         { key: :value }

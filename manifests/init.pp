@@ -62,13 +62,13 @@ class windows_autoupdate (
   $scheduled_install_time              = $windows_autoupdate::params::scheduled_install_time,
   $use_wuserver                        = $windows_autoupdate::params::use_wuserver,
 ) inherits windows_autoupdate::params {
-  validate_re($no_auto_update,['^[0,1]$'])
-  validate_re($au_options,['^[1-4]$'])
-  validate_re($scheduled_install_day,['^[0-7]$'])
-  validate_re($scheduled_install_time,['^(2[0-3]|1?[0-9])$'])
-  validate_re($use_wuserver,['^[0,1]$'])
-  validate_re($reschedule_wait_time,['^(60|[1-5][0-9]|[1-9])$'])
-  validate_re($no_auto_reboot_with_logged_on_users,['^[0,1]$'])
+  validate_re($no_auto_update, ['^[0,1]$'])
+  validate_re($au_options, ['^[1-4]$'])
+  validate_re($scheduled_install_day, ['^[0-7]$'])
+  validate_re($scheduled_install_time, ['^(2[0-3]|1?[0-9])$'])
+  validate_re($use_wuserver, ['^[0,1]$'])
+  validate_re($reschedule_wait_time, ['^(60|[1-5][0-9]|[1-9])$'])
+  validate_re($no_auto_reboot_with_logged_on_users, ['^[0,1]$'])
 
   service { 'wuauserv':
     ensure    => 'running',
