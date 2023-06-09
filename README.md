@@ -1,3 +1,5 @@
+**This module is deprecated. Do not use it anymore**
+
 # Windows Automatic Updates module for Puppet
 
 [![Build Status](https://travis-ci.org/voxpupuli/puppet-windows_autoupdate.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-windows_autoupdate)
